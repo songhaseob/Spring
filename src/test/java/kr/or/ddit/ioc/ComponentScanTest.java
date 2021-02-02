@@ -24,14 +24,14 @@ public class ComponentScanTest {
 	@Resource(name = "userDao")
 	private UserDao userDao;
 	
-	@Resource(name = "UserService")
+	@Resource(name = "userService")
 	private UserService UserService;
 	
 	@Test
 	public void userDaoImplSpringBeanTest() {
 		assertNotNull(userDao);
 		
-		UserVo userVo =  userDao.getUser("brown");
+		UserVo userVo =  userDao.selectUser("brown");
 		
 		assertEquals("브라운", userVo.getUsernm());
 		
@@ -42,7 +42,7 @@ public class ComponentScanTest {
 	public void userServiceImplSpringBeanTest() {
 		assertNotNull(UserService);
 		
-		UserVo userVo =  UserService.getUser("brown");
+		UserVo userVo =  UserService.selectUser("brown");
 		
 		assertEquals("브라운", userVo.getUsernm());
 		

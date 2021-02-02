@@ -6,12 +6,13 @@ import javax.annotation.Resource;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import kr.or.ddit.user.service.UserService;
 
-@ContextConfiguration("classpath:kr/or/ddit/ioc/ioc.xml")
+@ContextConfiguration(locations = {"classpath:kr/or/ddit/ioc/ioc.xml", "classpath:kr/or/ddit/config/spring/datasource-context.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
 public class IocTest {
 	@Resource(name = "userService")
@@ -31,6 +32,9 @@ public class IocTest {
 	
 	@Resource(name = "dbConfig")
 	private DbConfig dbConfig;
+	
+	@Resource(name = "sqlSessionTemplate")
+	private SqlSessionTemplate template;
 	
 	// userServiceCons 스프링 빈이 정상적으로 생성 되었는지 테스트
 	@Test

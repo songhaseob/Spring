@@ -26,7 +26,7 @@ public class iocMain {
 		
 		UserDao userDao =  (UserDao) context.getBean("userDao");
 		
-		UserVo userVo =  userDao.getUser("brown");
+		UserVo userVo =  userDao.selectUser("brown");
 		
 		logger.debug("uservo {}",userVo);
 		
@@ -35,7 +35,7 @@ public class iocMain {
 		
 		UserService userService = (UserService) context.getBean("userService");
 		
-		UserVo userVo1 = userService.getUser("brown");
+		UserVo userVo1 = userService.selectUser("brown");
 		
 		logger.debug("userVo1{}",userVo1);
 		for(String beanName :  context.getBeanDefinitionNames()) {
