@@ -1,6 +1,7 @@
 package kr.or.ddit.login;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -8,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.or.ddit.user.model.UserVo;
 import kr.or.ddit.user.service.UserService;
@@ -36,7 +38,7 @@ public class LoginController {
 	}
 	//1개일때는 {} 안써도되고 여러개일경우 {} 써야한다!
 	@RequestMapping(path="process", method = {RequestMethod.POST})
-	public String process(UserVo userVo,HttpSession session) {
+	public String process(UserVo userVo,HttpSession session, RedirectAttributes ra) {
 //		public String process(HttpSession session,UserVo userVo) {
 		logger.debug("userVo : {}", userVo);
 		
@@ -45,6 +47,13 @@ public class LoginController {
 			session.setAttribute("S_USER", dbUser);
 			return "main";
 		}else {
+			// 내부적으로 session을 사용하여 속성을 저장
+			// redirect 처리가 완료 되면 스프링 프레임워크에서 자동으로 session에서 제거 
+			ra.addFlashAttribute("msg","잘못된 사용자 정보입니다.");
+			
+			// 일반 속성을 추가한 경우 : addAttribute
+			// redirect 페이지의 파라미터로 전달된다
+			ra.addAttribute("userid","brown");
 			return "redirect:/login/view";
 		}
 	}

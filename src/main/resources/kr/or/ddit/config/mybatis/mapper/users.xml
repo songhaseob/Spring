@@ -36,7 +36,7 @@
 	<update id="modifyUser" parameterType="userVo">
 		UPDATE users SET usernm = #{usernm},
                  pass = #{pass},
-                 reg_dt = #{reg_dt},
+                 reg_dt = SYSDATE,
                  alias = #{alias},
                  addr1 = #{addr1},
                  addr2 = #{addr2},
@@ -48,7 +48,7 @@
 	
 	<insert id="insertUser" parameterType="userVo">
 		INSERT INTO users (userid,usernm,pass,alias,reg_dt,addr1,addr2,zipcode,filename, realfilename)
-		VALUES( #{userid},#{usernm},#{pass},#{alias},#{reg_dt},#{addr1},#{addr2},#{zipcode},#{filename},#{realfilename})
+		VALUES( #{userid},#{usernm},#{pass},#{alias},SYSDATE,#{addr1},#{addr2},#{zipcode},#{filename},#{realfilename})
 	</insert>
 	
 	<!-- 사용자 삭제 -->

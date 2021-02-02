@@ -8,8 +8,6 @@ import org.springframework.format.annotation.NumberFormat;
 public class UserVo {
 	private String userid;
 	private String usernm;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date reg_dt;
 	private String pass;
 	private String alias;
 	private String addr1;
@@ -20,6 +18,9 @@ public class UserVo {
 	
 	
 	public UserVo() {}
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date reg_dt;
 	
 	@DateTimeFormat(pattern = "MM-dd-yyyy")
 	private Date hire_dt;

@@ -7,6 +7,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.web.servlet.ModelAndView;
@@ -44,6 +45,17 @@ public class HelloControllerTest extends WebTestConfig{
 		UserVo userVo =  (UserVo)mav.getModel().get("userVo");
 		assertEquals("brown", userVo.getUserid());
 				
+	}
+	
+	@Test
+	@Ignore
+	public void pathvarableTest() throws Exception{
+		
+		MvcResult mvcResult = mockMvc.perform(get("/hello/path/conny"))
+				.andExpect(status().isOk())
+				.andExpect(model().attributeExists("subpath"))
+				.andDo(print())
+				.andReturn();
 	}
 
 }
