@@ -69,7 +69,7 @@ $(function(){
 						
 						<div class="col-sm-10">
 						<img src="${cp }/profile/${uservo.userid}.png"><br>
-						<input type="file" class="form-control" id="profile" name="profile">
+						<input type="file" class="form-control" id="profile" name="file">
 						</div>
 					</div>
 					

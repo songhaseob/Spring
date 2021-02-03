@@ -8,28 +8,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<meta name="description" content="">
-<meta name="author" content="">
-<title>Main</title>
-<style>
-	table{
-		text-align: center;
-	}
-	.th{
-		text-align: center;
-	}
-</style>
-<!-- Bootstrap core CSS -->
-<%@include file="../common/common_lib.jsp"%>
-<link href="${cp}/css/dashboard.css" rel="stylesheet">
-<link href="${cp}/css/blog.css" rel="stylesheet">
+
+
+
+
 <script>
 // 문서 로딩이 완료되고 나서 실행되는 영역
 $(function(){
@@ -43,36 +25,19 @@ $(function(){
 	});
 });
 </script>
-</head>
+
 
 <body>
 	<form id="frm" action="${cp}/user/detailuser" >
 		<input type="hidden" id="userid" name="userid" value="">
 	</form>
-	
-	<!-- header -->
-	<%@include file="../common/header.jsp"%>
-	
-	<div class="container-fluid">
-		<div class="row">
-
-			<div class="col-sm-3 col-md-2 sidebar">
-			<!-- left -->
-			<%@include file="../common/left.jsp"%>
-			</div>
-			
-			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-
-				<div class="blog-header">
-					
-				</div>
 
 				<div class="row">
 
 					<div class="col-sm-8 blog-main">
 
 						<div class="blog-post">
-							<h1>사용자현황</h1>
+							<h1>사용자현황(tiles)</h1>
 							<br>
 							<table class="table table-striped">
 								<tr>
@@ -106,7 +71,7 @@ $(function(){
 								     전체 페이지 수 : 4페이지
 								 --%> 
 								 <li class="prev">
-									<a href="${cp}/user/pagingUser?page=1&pageSize=${pageVo.getPageSize()}">«</a>
+									<a href="${cp}/user/pagingUserTiles?page=1&pageSize=${pageVo.getPageSize()}">«</a>
 								</li>
 								<c:forEach begin="1" end="${pagination}" var="i">
 									<c:choose>
@@ -114,14 +79,14 @@ $(function(){
 											<li class="active"><span>${i }</span></li>
 										</c:when>
 										<c:otherwise>
-										<li><a href="${cp}/user//pagingUser?page=${i }&pageSize=${pageVo.getPageSize()}">${i }</a></li>
+										<li><a href="${cp}/user/pagingUserTiles?page=${i }&pageSize=${pageVo.getPageSize()}">${i }</a></li>
 										</c:otherwise>
 									</c:choose>
 									
 								</c:forEach>
 								
 								<li class="next">
-									<a href="${cp}/user//pagingUser?page=${pagination}&pageSize=${pageVo.getPageSize()}">»</a>
+									<a href="${cp}/user/pagingUserTiles?page=${pagination}&pageSize=${pageVo.getPageSize()}">»</a>
 								</li>
 							</ul>
 						</div>
@@ -129,8 +94,6 @@ $(function(){
 					</div>
 					<!-- /.blog-main -->
 				</div>
-			</div>
-		</div>
-	</div>
+	
 </body>
 </html>

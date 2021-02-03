@@ -4,6 +4,9 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,12 +87,15 @@ $(function(){
 		
 			
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+			spring message : <spring:message code="LANG" arguments="brown"/>
+			
 				<form class="form-horizontal" role="form" action="${cp}/user/insertUser" method="POST" enctype="multipart/form-data">
 					<div class="form-group">
 						<label for="userNm" class="col-sm-2 control-label">사용자 아이디</label>
 						<div class="col-sm-8">
 								<input type="text" class="form-control" id="userid" name="userid"
 						placeholder="사용자 아이디" ><br>
+						<span style="color:red"><form:errors path="UserVo.userid"/></span>
 						<input type="file" class="form-control" name="file"><br>
 						</div>
 						<div class="col-sm-2">
