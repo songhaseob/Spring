@@ -29,3 +29,13 @@ localhost/hello/hello ==> 화면에 hello 문자만 보이면 됨
 ajax ==> json
 ajax ==> xml
 ajax ==> html
+
+AOP(Aspect Oriented Programing) : 여러 클래스로 분산된 책임(기능)을 별도의 관점으로 분리/캡슐화 하는 프로그래밍 방법
+
+Aspect : 여러 객체에 공통으로 적용되는 관심사항
+Advice : 공통 관심 기능을 언제 핵심로직에 적용할 지 정의
+
+PointCut : joinpoint의 식별의 정의(어떤 메소드에)
+
+
+
