@@ -1,0 +1,34 @@
+21.02.02
+
+context - container
+spring xml - 파일명 :
+web application context :
+(web application)context path:
+
+문맥
+
+==================================
+Context Switching
+
+마샬링 - 객체의 표현 방식을 다른 형식으로 변환하는 과정
+json -> java object
+스프링에서는 Converter가 담당
+
+viewName : "ajax/ajaxView"
+
+1. tilesViewResolver
+	==> viewName과 동일한 이름의 tiles definition이 있는지 검사
+		있으면 사용
+		없으면 ? 
+2. beanNameViewResolver
+	==> viewName과 동일한 이름의 스프링 빈을 찾고, 검색이 되면 해당 스프링 빈을 view객체로 사용
+		있으면 view 객체로 사용
+		없으면 ? 
+3. internalResourceViewResolver
+	==> view name에 해당하는 리소스의 존재 유무와 관계없이 forward
+	
+중간프로젝트 => 스프링으로 바꾸기
+1. login,main화면 공통
+2. 본인이 만든 메뉴 아무거나 하나
+   메뉴가 메인화면 링크를 통해 접속 할 수 있게끔
+   (만약 본인이 만든 기능이 메인 메뉴에 없을 경우 강제로 추가)

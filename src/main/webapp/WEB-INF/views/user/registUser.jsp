@@ -26,6 +26,11 @@
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
 $(function(){
+	$('select[name=lang]').val("${param.Lang}")
+	$('select[name=lang]').on("change",function(){
+		console.log("on change");
+		document.location="/user/registUser?lang=" + $(this).val();
+	})
 	// 주소검색 버튼이 클릭 되었을 때 다음 주소 api 팝업을 실행
 	$('#addrBtn').on("click",function(){
 		
@@ -64,6 +69,8 @@ $(function(){
 			dataType : "json"
 		})
 	})
+	
+	
 })
 
 </script>
@@ -91,7 +98,7 @@ $(function(){
 			
 				<form class="form-horizontal" role="form" action="${cp}/user/insertUser" method="POST" enctype="multipart/form-data">
 					<div class="form-group">
-						<label for="userNm" class="col-sm-2 control-label">사용자 아이디</label>
+						<label for="userNm" class="col-sm-2 control-label"></label>
 						<div class="col-sm-8">
 								<input type="text" class="form-control" id="userid" name="userid"
 						placeholder="사용자 아이디" ><br>
@@ -156,9 +163,17 @@ $(function(){
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
 							<button type="submit" class="btn btn-default">사용자등록</button>
+							
 						</div>
 					</div>
 				</form>
+				
+				<select name="lang">
+								<option value="">언어설정</option>
+								<option value="ko">한국어</option>
+								<option value="en">영어</option>
+			    </select>
+
 			</div>
 		</div>
 	</div>
