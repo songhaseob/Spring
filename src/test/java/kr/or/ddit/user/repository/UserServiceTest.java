@@ -60,7 +60,7 @@ public class UserServiceTest extends ModelTestConfig{
 			/***When***/
 			List<UserVo> userList = userservice.selectAllUser();
 			/***Then***/
-			assertEquals(21, userList.size());
+			assertEquals(20, userList.size());
 		}
 		
 		// 사용자 아이디를 이용하여 특정 사용자 정보 조회
@@ -97,7 +97,7 @@ public class UserServiceTest extends ModelTestConfig{
 			int userCnt = (int)map.get("userCnt");
 			/***Then***/
 			assertEquals(5,userList.size());
-			assertEquals(21, userCnt);
+			assertEquals(19, userCnt);
 		}
 		
 		@Test

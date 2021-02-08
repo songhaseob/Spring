@@ -9,7 +9,8 @@ import jdk.nashorn.internal.ir.annotations.Ignore;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:/kr/or/ddit/config/spring/datasource-context.xml",
-									"classpath:/kr/or/ddit/config/spring/root-context.xml"})
+									"classpath:/kr/or/ddit/config/spring/root-context.xml",
+									"classpath:/kr/or/ddit/config/spring/aop-context.xml"})
 
 public class ModelTestConfig {
 	// service, repository ==> 
