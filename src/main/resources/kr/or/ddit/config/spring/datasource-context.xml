@@ -50,7 +50,7 @@
 	<!-- 1. bean 선언 순서 중요하지 않음
 		 2. 다른 설정파일에 선언한 스프링 빈도 참조하는게 가능 -->
 		 
-	<bean id="transoctionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 			<property name="dataSource" ref="dataSource"></property>
 	</bean>
 	
