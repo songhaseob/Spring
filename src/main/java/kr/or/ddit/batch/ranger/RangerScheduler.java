@@ -43,9 +43,6 @@ public class RangerScheduler {
 																		 			 "classpath:/kr/or/ddit/config/spring/batch-context.xml"});
 		RangerScheduler rangerScheduler = new RangerScheduler();
 		
-//		rangerScheduler.jobLauncher = context.getBean("jobLauncher",JobLauncher.class);
-//		rangerScheduler.job = context.getBean("jobLauncher",Job.class);
-		
 	}
 	
 }

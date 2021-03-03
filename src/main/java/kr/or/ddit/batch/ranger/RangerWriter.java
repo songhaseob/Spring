@@ -6,8 +6,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemWriter;
 
-
-
 public class RangerWriter implements ItemWriter<String>{
 	
 	private static final Logger logger = LoggerFactory.getLogger(RangerWriter.class);

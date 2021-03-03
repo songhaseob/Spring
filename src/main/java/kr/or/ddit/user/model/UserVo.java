@@ -3,18 +3,18 @@ package kr.or.ddit.user.model;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import javax.validation.constraints.Size;
-
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.NumberFormat;
 
 public class UserVo {
 	
 	// 어노테이션 errorcode
-	@Size(min=5)
+	
 	private String userid;
 	
+	
 	private String usernm;
+	
 	private String pass;
 	private String alias;
 	private String addr1;
@@ -22,7 +22,6 @@ public class UserVo {
 	private String zipcode;
 	private String filename;
 	private String realfilename;
-	
 	
 	public UserVo() {}
 	

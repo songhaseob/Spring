@@ -1,7 +1,6 @@
 package kr.or.ddit.login;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -17,7 +16,9 @@ import kr.or.ddit.user.service.UserService;
 @RequestMapping("login")
 @Controller
 public class LoginController {
+	
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
+	
 	@Resource(name="userService")
 	private UserService userService;
 	
